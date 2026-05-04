@@ -12,7 +12,7 @@ def main():
         template=summary_template, input_variables=["interested_stock"]
     )
 
-    llm_obj = ChatOllama(temperature=0.3, model="llama3.2:3b")
+    llm_obj = ChatOllama(temperature=0.3, model="llama3.2:latest")
 
     chain = prompt_obj | llm_obj
     response = chain.invoke(input={"interested_stock": interested_stock})
